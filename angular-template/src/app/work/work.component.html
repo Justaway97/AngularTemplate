@@ -1,0 +1,24 @@
+<div class="main">
+    <ng-container *ngFor="let c of content;let i = index">
+        <ng-container *ngIf="i % 2 == 0">
+            <div class="content">
+                <img [src]="urlUhunt">
+                <div class="content-text">
+                    <h1>
+                        {{ c }}
+                    </h1>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="i % 2 != 0">
+            <div class="content">
+                <div class="content-text">
+                    <h1>
+                        {{ c }}
+                    </h1>
+                </div>
+                <img [src]="urlUhunt">
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

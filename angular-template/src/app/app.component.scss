@@ -1,0 +1,87 @@
+@import "styles";
+
+canvas {
+    position: absolute;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    // opacity: 0.5;
+    // background-repeat: no-repeat;
+    background-attachment: fixed;
+    // background-size: cover;
+    // background-image: url('../assets/background.jpeg');
+    background: linear-gradient(-45deg, red, orange, yellow, rgb(19, 128, 0), rgb(0, 255, 255), indigo, purple);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    // height: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    20% {
+        background-position: 0 100%;
+    }
+
+    40% {
+        background-position: 40 30%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    60% {
+        background-position: 60% 0%;
+    }
+
+    80% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.prev {
+    // background-image: linear-gradient(to right bottom, #000000, #332324, #62413c, #91644f, #bc8d61, #bc8d61, #bc8d61, #bc8d61, #91644f, #62413c, #332324, #000000) !important;
+    background-color: black;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+* {
+    // cursor: url(https://www.kindpng.com/picc/m/8-86459_cartas-de-poker-as-de-pica-png-download.png), auto;
+    cursor: url('../assets/ace.png'), auto !important;
+    // cursor: url('poker-heart-ace.cur'), default;
+    // cursor: url('cursor-hand.gif'), default;
+    // cursor: url('http://anuary.com/dev/hp/pad3/public/images/hand-cursor.png'), auto;
+
+}
+
+.about {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill {
+    height: 100vh;
+    position: relative;
+}
+
+.work {
+    height: 100vh;
+    position: relative;
+}
+
+form {
+    height: 100vh;
+}
