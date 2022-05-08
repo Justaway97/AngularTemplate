@@ -22,6 +22,7 @@ export class SpinnerComponent implements OnInit {
 
   styles: any;
   spinnerClick = false;
+  canClick = false;
 
   constructor(private elementRef: ElementRef) { }
 
@@ -33,14 +34,19 @@ export class SpinnerComponent implements OnInit {
       'left': ((100 - this.width) / 2).toString().concat('%'),
       'position': 'absolute',
     }
+    setTimeout(() => {
+      this.canClick = true;
+    }, 3000);
   }
 
   click() {
-    console.log('click');
-    this.spinnerClick = !this.spinnerClick;
-    let element = this.elementRef.nativeElement.querySelector('.image');
-    setTimeout(() => {
-      this.onClick.emit();
-    }, 1000);
+    if (this.canClick) {
+      console.log('click');
+      this.spinnerClick = !this.spinnerClick;
+      let element = this.elementRef.nativeElement.querySelector('.image');
+      setTimeout(() => {
+        this.onClick.emit();
+      }, 1000);
+    }
   }
 }

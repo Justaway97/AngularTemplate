@@ -1,28 +1,5 @@
 <div class="scroll">
     <ng-container *ngFor="let d of data;let i = index">
-        <app-button [color]="d.color" [text]="i" (onClick)="scrollToId(d)"></app-button>
+        <app-button [color]="d.color" [text]="i" [tooltip]="d.tooltip" (onClick)="scrollToId(d)"></app-button>
     </ng-container>
 </div>
-<ng-container *ngFor="let d of data;let i = index">
-    <section [id]="i">
-        <div class="container reveal">
-            <h1>Watch &#8595;</h1>
-        </div>
-        <div class="container reveal">
-            <h1>Watch the &#8595;</h1>
-        </div>
-        <div class="container reveal">
-            <h1>Watch the Nav &#8595;</h1>
-        </div>
-        <div class="container reveal">
-            <h1>Watch the Nav Bar &#8595;</h1>
-        </div>
-        <div class="container reveal">
-            <h1>Watch the Nav Bar as &#8595;</h1>
-        </div>
-        <div class="container reveal">
-            <h1>Watch the Nav Bar as you &#8595;</h1>
-        </div>
-
-    </section>
-</ng-container>

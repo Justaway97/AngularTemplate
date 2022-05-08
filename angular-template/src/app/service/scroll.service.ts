@@ -9,6 +9,7 @@ export class ScrollService {
 
   scrollToElementById(id: string) {
     const element = this.__getElementById(id);
+    console.log(element);
     this.scrollToElement(element);
   }
 
@@ -19,5 +20,17 @@ export class ScrollService {
 
   scrollToElement(element: HTMLElement) {
     element.scrollIntoView({ behavior: "smooth" });
+  }
+
+  scrollToCenterElementById(id: string) {
+    const element = this.__getElementById(id);
+    this.scrollToElementCenter(element);
+  }
+  scrollToElementCenter(element: HTMLElement) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center'
+    });
   }
 }

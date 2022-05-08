@@ -20,7 +20,8 @@ export class AppComponent extends FormComponent implements OnInit {
 
   @ViewChild(TableComponent) table: TableComponent;
   displayPrevStyle = true;
-
+  cursor = ['url(../assets/ace.png), auto', 'url(../assets/heart.png), auto', 'url(../assets/cloud.png), auto', 'url(../assets/diamond.png), auto']
+  cursorSelected: any;
 
   override ngOnInit(): void {
     super.ngOnInit();
@@ -137,11 +138,15 @@ export class AppComponent extends FormComponent implements OnInit {
         type: 'button',
         style: 'icon',
         value: 'facebook',
+        color: 'white',
+        tooltip: 'facebook'
       },
       {
         type: 'button',
         style: 'icon',
         value: 'email',
+        color: 'white',
+        tooltip: 'mailto:97songming@gmail.com'
       },
     ],
     right: [
@@ -149,16 +154,31 @@ export class AppComponent extends FormComponent implements OnInit {
         type: 'button',
         style: 'icon',
         value: 'phone',
+        color: 'white',
+        tooltip: '+65 8852 2639'
       },
       {
         type: 'button',
         style: 'icon',
         value: 'whatsapp',
+        color: 'white',
+        tooltip: '+65 8852 2639'
       },
       {
         type: 'button',
-        style: 'icon',
-        value: 'linked-in',
+        style: 'image',
+        value: 'assets/linkedin.png',
+        color: 'white',
+        height: '20px',
+        tooltip: '+65 8852 2639'
+      },
+      {
+        type: 'button',
+        style: 'image',
+        value: 'assets/resume.png',
+        color: 'white',
+        height: '40px',
+        tooltip: 'resume',
       }
     ]
   }
@@ -169,15 +189,15 @@ export class AppComponent extends FormComponent implements OnInit {
   spinnerWidth = 10
   //scroll
   scrollData = [
-    { color: 'white', id: 'about' },
-    { color: 'white', id: 'skill' },
-    { color: 'white', id: 'work' },
+    { color: 'white', id: 'about', tooltip: 'About Me' },
+    { color: 'white', id: 'skill', tooltip: 'Skill and Knowledge' },
+    { color: 'white', id: 'work', tooltip: 'Project and Exercise' },
     // { color: 'white', id: 'about3' },
     // { color: 'white', id: 'about4' },
     // { color: 'white', id: 'about5' }
   ]
   // work
-  urlUhunt = "assets/uhunt.jpeg";
+  urlWork = ['assets/uhunt.jpeg', 'assets/order.jpeg', 'assets/hat.png'];
 
   openDialog() {
     this.dialog.open(DialogComponent, {
@@ -210,9 +230,10 @@ export class AppComponent extends FormComponent implements OnInit {
   }
 
   spinnerClick() {
-
     setTimeout(() => {
       this.displayPrevStyle = !this.displayPrevStyle;
+      this.cursorSelected = this.cursor[Math.floor(Math.random() * 4)];
+      console.log(this.cursorSelected)
     }, 1000);
   }
 

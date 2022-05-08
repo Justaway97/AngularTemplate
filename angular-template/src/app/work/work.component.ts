@@ -12,7 +12,7 @@ export class WorkComponent implements OnInit {
   angularMaterial = "This is a Angular component project for me to refer and reuse the component whenever I need."
 
   content = [this.uhunt, this.order, this.angularMaterial]
-  @Input() urlUhunt: any;
+  @Input() url: any;
   constructor() { }
 
   ngOnInit(): void {

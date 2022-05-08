@@ -24,6 +24,7 @@ export class LogoComponent implements OnInit {
     } else {
       this.left = this.left * 0.01
     }
+    console.log(window.innerWidth, window.innerHeight);
     this.styles = {
       // width: '10%',
       height: this.imageSize.toString().concat('%'),
@@ -31,10 +32,10 @@ export class LogoComponent implements OnInit {
       left: Math.floor(window.innerHeight * this.left).toString().concat('px'),
     }
     this.textStyles = {
-      'font-size': '75px',
+      'font-size': (this.imageSize + window.innerHeight / 1000).toString().concat('vh'),
       top: Math.floor(window.innerWidth * this.top + (window.innerWidth / 100) + (this.top * 100) + 3).toString().concat('px'),
       // left: Math.floor(window.innerHeight * this.left - (this.left * 100 / (window.innerHeight * this.left - this.left * 100))).toString().concat('px'),
-      left: Math.floor(window.innerHeight * this.left).toString().concat('px'),
+      left: Math.floor(window.innerHeight * this.left * 1.015).toString().concat('px'),
     }
   }
 

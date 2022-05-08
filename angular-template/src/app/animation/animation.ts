@@ -86,7 +86,6 @@ export const spinnerFlipAnimation = trigger('spinner', [
     ),
 ])
 
-
 export const fadeInAnimation = trigger('fadeIn',
     [
         state(
@@ -102,11 +101,30 @@ export const fadeInAnimation = trigger('fadeIn',
             }),
         ),
         transition('fade <=> fade-in',
-            animate('1500ms')
+            animate('1000ms')
         ),
     ]
 );
 
+export const fadeOutAnimation = trigger('fadeOut',
+    [
+        state(
+            'fade',
+            style({
+                opacity: 1
+            })
+        ),
+        state(
+            'fade-out',
+            style({
+                opacity: 0
+            }),
+        ),
+        transition('fade <=> fade-out',
+            animate('1000ms')
+        ),
+    ]
+);
 export const glowAnimation = trigger('glow',
     [
         transition('glow <=> glow-in',

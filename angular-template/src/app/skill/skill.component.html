@@ -1,22 +1,20 @@
 <div class="main">
-    <!-- <div class="hat"> -->
-    <img [src]="url">
-    <!-- </div> -->
-    <div class="java">
-        <span>
-            Java
-        </span>
-    </div>
-    <div class="skill">
-        <h1>
-            SKILLS
-        </h1>
-    </div>
+    <mat-list class="skill">
+        <ng-container *ngFor="let s of skills;let i = index">
+            <mat-list-item class="content" [id]="setId(s)" (click)="onClick(s, i)">
+                <span [ngClass]="skillIndex === i ? 'skillTitleActive' : 'skillTitle'">
+                    {{ s }}
+                </span>
+            </mat-list-item>
+        </ng-container>
+    </mat-list>
+    <ng-container *ngIf="selectedSkill !== ''">
+        <div class="description">
+            <span class="descriptionContent">
+                {{ selectedSkill }}
+                The description here is just my feeling towards the item only!!
+            </span>
+        </div>
+    </ng-container>
+    <span class="cornerText">MY SKILL AND KNOWLEDGE</span>
 </div>
-<!-- <ng-container *ngFor="let skill of skills">
-    <div>
-        <span class="skill">
-            {{ skill }}
-        </span>
-    </div>
-</ng-container> -->
