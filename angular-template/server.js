@@ -1,7 +1,9 @@
-var express = require('express');
-var app = express();
-var path = require('path');
-
-app.use(express.static(path.join(__dirname, 'build'))); // <-- this is pointing to your static html, css and js files
-
-app.listen(process.env.PORT || 80);
+const express = require('express');
+const path = require('path');
+const app = express();
+app.use(express.static(__dirname + '/dist/<app-name>'));
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname +
+        '/dist/<app-name>/index.html'));
+});
+app.listen(process.env.PORT || 8080);
